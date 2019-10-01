@@ -1,0 +1,21 @@
+# ----------
+# Knight Resource
+# ----------
+post_knight:
+    pattern: /knight
+    defaults: { _controller: ExerciseBundle:Knight:postKnight, _format: json }
+    requirements:
+        _method: POST
+
+get_knights:
+    pattern: /knight/{limit}/{offset}
+    defaults: { _controller: ExerciseBundle:Knight:getKnights, _format: json }
+    requirements:
+        _method: GET
+
+get_knight:
+    pattern: /knight/{id}
+    defaults: { _controller: ExerciseBundle:Knight:getKnight, _format: json }
+    requirements:
+        id: \d+
+        _method: GET
